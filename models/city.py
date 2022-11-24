@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-Defines city
-"""
+"""City module"""
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """defines city to look for"""
+    """Creates the city attributes"""
     state_id = ""
     name = ""
