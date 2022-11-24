@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""
-User creation class
-"""
+""" User module """
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """Defines attributes for user creation"""
+    """Inherits from BaseModel and sets attribute"""
     email = ""
     password = ""
     first_name = ""
