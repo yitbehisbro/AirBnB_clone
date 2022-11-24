@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""
-Unittest for amenity.py
+"""Unittest module for amenity.py
 """
 import unittest
 from models.amenity import Amenity
 import datetime
 
 
-class TestAmenity(unittest.TestCase):
-    """Tests instances and methods from amenity class"""
+class TestAmenitySubClass(unittest.TestCase):
+    """Tests instances and methods from amenity subclass"""
 
     a = Amenity()
 
