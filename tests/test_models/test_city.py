@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""
-Unittest for user.py
+"""Unittest module for city.py
 """
 import unittest
 from models.city import City
 import datetime
 
 
-class TestCity(unittest.TestCase):
+class TestCitySubClass(unittest.TestCase):
     """Tests instances and methods from city class"""
 
     c = City()
