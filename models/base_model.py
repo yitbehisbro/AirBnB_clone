@@ -1,6 +1,6 @@
 #!/usr/bin/pyhon3
 """
-Parent class that will inherit
+BaseModel module
 """
 import uuid
 from datetime import datetime
@@ -8,10 +8,10 @@ from models import storage
 
 
 class BaseModel:
-    """Defines all common attributes/methods
+    """defines all common attributes/methods for other classes
     """
     def __init__(self, *args, **kwargs):
-        """initializes all attributes
+        """initialization of all attributes
         """
         if not kwargs:
             self.id = str(uuid.uuid4())
@@ -27,21 +27,21 @@ class BaseModel:
                     setattr(self, key, value)
 
     def __str__(self):
-        """returns class name, id and attribute dictionary
+        """returns the class string representation
         """
         class_name = "[" + self.__class__.__name__ + "]"
         dct = {k: v for (k, v) in self.__dict__.items() if (not v) is False}
         return class_name + " (" + self.id + ") " + str(dct)
 
     def save(self):
-        """updates last update time
-        """
+        """updates the public instance attribute
+        updated_at with the current datetime """
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
-        """creates a new dictionary, adding a key and returning
-        datemtimes converted to strings
+        """returns a dictionary containing all keys/values
+        of __dict__ of the instance
         """
         new_dict = {}
 
